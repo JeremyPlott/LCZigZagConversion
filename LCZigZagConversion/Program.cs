@@ -30,21 +30,26 @@ namespace LCZigZagConversion
                     {
                         zigzagRows[rowTracker] += s[i];
                         rowTracker++;
+
                         if (rowTracker == numRows )
                         {
                             incrementingRows = !incrementingRows;
                             rowTracker -= 2;
+
                             continue;
                         }
                     }
+
                     if (!incrementingRows && rowTracker > -1)
                     {
                         zigzagRows[rowTracker] += s[i];
                         rowTracker--;
+
                         if (rowTracker == -1)
                         {
                             incrementingRows = !incrementingRows;
                             rowTracker += 2;
+
                             continue;
                         }
                     }
